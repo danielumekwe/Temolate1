@@ -1,0 +1,299 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    :root {
+
+        --background: 0 0% 0%;
+        --foreground: 0 0% 100%;
+
+        --card: 0 0% 3%;
+        --card-foreground: 0 0% 100%;
+
+        --popover: 0 0% 3%;
+        --popover-foreground: 0 0% 100%;
+
+        --primary: 0 0% 100%;
+        --primary-foreground: 0 0% 0%;
+
+        --secondary: 0 0% 10%;
+        --secondary-foreground: 0 0% 100%;
+
+        --muted: 0 0% 15%;
+        --muted-foreground: 0 0% 60%;
+
+        --accent: 0 0% 20%;
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 100% 50%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 0 0% 20%;
+        --input: 0 0% 20%;
+        --ring: 0 0% 100%;
+
+        --radius: 0rem;
+
+    }
+
+}
+
+@layer base {
+
+    * {
+
+        @apply border-border;
+
+    }
+
+    body {
+
+        @apply bg-background text-foreground;
+
+        font-feature-settings:
+        "rlig" 1,
+        "calt" 1;
+
+    }
+
+}
+
+/* ===========================
+   CUSTOM CURSOR
+=========================== */
+
+@media (min-width:768px){
+
+    *{
+
+        cursor:none;
+
+    }
+
+    .custom-cursor{
+
+        position:fixed;
+
+        top:0;
+
+        left:0;
+
+        width:20px;
+
+        height:20px;
+
+        border:1px solid white;
+
+        border-radius:50%;
+
+        pointer-events:none;
+
+        z-index:99999;
+
+        transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+        transition:
+        width .2s,
+        height .2s;
+
+    }
+
+    .custom-cursor.active{
+
+        width:50px;
+
+        height:50px;
+
+        background:
+        rgba(
+            255,
+            255,
+            255,
+            .1
+        );
+
+    }
+
+    a,
+    button{
+
+        cursor:none;
+
+    }
+
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:
+    "Inter",
+    sans-serif;
+
+    font-weight:700;
+
+    letter-spacing:
+    -.03em;
+
+}
+
+/* ===========================
+   SMOOTH SCROLL
+=========================== */
+
+html{
+
+    scroll-behavior:
+    smooth;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#000;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#D9862B;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ffb14a;
+
+}
+
+/* ===========================
+   BLOG EDITOR
+=========================== */
+
+.ql-toolbar{
+
+    background:#fff;
+
+    border:
+    1px solid #262626
+    !important;
+
+}
+
+.ql-container{
+
+    background:#fff;
+
+    color:#000;
+
+    border:
+    1px solid #262626
+    !important;
+
+}
+
+.ql-editor{
+
+    min-height:450px;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+.ql-editor h1{
+
+    font-size:40px;
+
+    font-weight:800;
+
+}
+
+.ql-editor h2{
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+.ql-editor h3{
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+.ql-editor p{
+
+    margin-bottom:18px;
+
+}
+
+.ql-editor img{
+
+    max-width:100%;
+
+    border-radius:8px;
+
+    margin-top:20px;
+
+}
+
+.ql-editor ul,
+.ql-editor ol{
+
+    padding-left:30px;
+
+}
+
+/* ===========================
+   CURSOR FIX
+=========================== */
+
+.ql-toolbar,
+.ql-container,
+.ql-editor,
+input,
+textarea,
+select{
+
+    cursor:none !important;
+
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+img{
+
+    max-width:100%;
+
+}

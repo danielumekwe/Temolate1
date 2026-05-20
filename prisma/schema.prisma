@@ -1,0 +1,64 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model ContactLead {
+
+  id        Int      @id @default(autoincrement())
+
+  name      String
+
+  email     String
+
+  phone     String?
+
+  service   String?
+
+  message   String
+
+  createdAt DateTime @default(now())
+
+}
+
+model Post {
+
+  id             Int      @id @default(autoincrement())
+
+  title          String
+
+  slug           String   @unique
+
+  excerpt        String?  @db.LongText
+
+  content        String   @db.LongText
+
+  image          String?  @db.LongText
+
+  featuredImage  String?  @db.LongText
+
+  category       String?
+
+  tags           String?
+
+  status         String   @default("draft")
+
+  seoTitle       String?
+
+  seoDescription String?  @db.LongText
+
+  author         String?
+
+  featured       Boolean  @default(false)
+
+  views          Int      @default(0)
+
+  createdAt      DateTime @default(now())
+
+  updatedAt      DateTime @updatedAt
+
+}

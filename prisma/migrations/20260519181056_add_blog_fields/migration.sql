@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE `Post` ADD COLUMN `category` VARCHAR(191) NULL,
+    ADD COLUMN `featuredImage` VARCHAR(191) NULL,
+    ADD COLUMN `tags` VARCHAR(191) NULL;

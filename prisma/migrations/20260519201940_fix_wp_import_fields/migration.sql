@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `Post` MODIFY `excerpt` LONGTEXT NULL,
+    MODIFY `seoDescription` LONGTEXT NULL;
