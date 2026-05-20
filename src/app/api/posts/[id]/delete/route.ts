@@ -3,11 +3,13 @@ import { redirect } from "next/navigation";
 
 export async function POST(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
+
   await prisma.post.delete({
     where: {
-      id: Number(params.id),
+      id: Number(id),
     },
   });
 
