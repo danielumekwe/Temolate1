@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import AdminSidebar from "@/components/admin/AdminSidebar";
+export const dynamic = "force-dynamic";
 
 export default function ImportPage() {
   const [url, setUrl] = useState("");
