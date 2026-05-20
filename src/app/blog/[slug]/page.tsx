@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { Navbar, Footer } from "@/layouts";
 import { NoiseBackground } from "@/components";
+export const dynamic = "force-dynamic";
 
 export default async function SingleBlogPage({
   params,
